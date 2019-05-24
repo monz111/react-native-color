@@ -50,7 +50,7 @@ export class SlidersColorPicker extends Component {
  componentWillReceiveProps(nextProps) {
     if (this.props.color !== nextProps.color) {
       this.setState({
-        color: tinycolor(nextProps.color).toHsl();
+        color: tinycolor(nextProps.color).toHsl()
       });
     }
   }
