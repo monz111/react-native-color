@@ -47,6 +47,14 @@ export class SlidersColorPicker extends Component {
   updateSaturation = s => this.setState({ color: { ...this.state.color, s } });
   updateLightness = l => this.setState({ color: { ...this.state.color, l } });
 
+ componentWillReceiveProps(nextProps) {
+    if (this.props.color !== nextProps.color) {
+      this.setState({
+        color: tinycolor(nextProps.color).toHsl();
+      });
+    }
+  }
+
   render() {
     const {
       visible,
